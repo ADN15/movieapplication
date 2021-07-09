@@ -32,6 +32,10 @@ public class MovieApplicationController {
     		status = 1;
     		message = "OK";
     		response.remove("Response");
+    	} else {
+    		message = response.get("Error").toString();
+    		response.remove("Response");
+    		response.remove("Error");
     	}
     	return ResponseEntity.ok(new GlobalResponseDTO<>(status, message, response));
     }
