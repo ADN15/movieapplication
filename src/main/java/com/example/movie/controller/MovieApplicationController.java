@@ -23,9 +23,9 @@ public class MovieApplicationController {
 	MovieApplicationService movieApplicationService;
 	
 	@GetMapping("/find")
-	public ResponseEntity<Object> findMovie(@RequestBody RequestDTO requestParam) throws GlobalCustomException {
+	public ResponseEntity<Object> findMovie(@RequestParam("search") String search) throws GlobalCustomException {
 		LOGGER.info("find movie api");
-    	Map<String, Object> response =  movieApplicationService.findMovie(requestParam);
+    	Map<String, Object> response =  movieApplicationService.findMovie(search);
     	int status = 0;
     	String message = "Not Found !";
     	if (response.get("Response").equals("True")) {

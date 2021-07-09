@@ -68,7 +68,7 @@ public class MovieApplicationService {
         return clientHttpRequestFactory;
     }
 	
-	public Map<String, Object> findMovie (RequestDTO params) throws GlobalCustomException {
+	public Map<String, Object> findMovie (String params) throws GlobalCustomException {
 		Map<String,Object> result = new HashMap<String,Object>();
 		
 		RestTemplate restTemplate = new RestTemplate(getClientHttpRequestFactory());
@@ -76,7 +76,7 @@ public class MovieApplicationService {
 		
 		ResponseEntity<String> responseEntity;
 		try {
-			url = url+"?"+paramKey+"="+key+"&s="+params.getSearch();
+			url = url+"?"+paramKey+"="+key+"&s="+params;
 			
 			//Header
 			HttpHeaders headers = new HttpHeaders();
