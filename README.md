@@ -1,5 +1,6 @@
 # movieapplication
 Rest API Service with public API
+this program use JAVA 11
 
 Clone the branch on your local Computer
 
