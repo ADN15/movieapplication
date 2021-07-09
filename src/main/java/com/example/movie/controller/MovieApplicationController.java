@@ -33,6 +33,6 @@ public class MovieApplicationController {
     		message = "OK";
     		response.remove("Response");
     	}
-    	return ResponseEntity.ok(new GlobalResponseDTO<>(1, "OK", response));
+    	return ResponseEntity.ok(new GlobalResponseDTO<>(status, message, response));
     }
 }
